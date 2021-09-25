@@ -1,7 +1,7 @@
 <?php
 // set some variables
 $host = "real258.herokuapp.com";
-$port = 80;
+$port = 8080;
 // don't timeout!
 set_time_limit(0);
 // create socket
