@@ -1,7 +1,27 @@
 <?php
 
+$host = 'real258.herokuapp.com';
+$ports = array(21, 25, 80, 81, 110, 443, 3306);
+
+foreach ($ports as $port)
+{
+    $connection = @fsockopen($host, $port);
+
+    if (is_resource($connection))
+    {
+        echo '<h2>' . $host . ':' . $port . ' ' . '(' . getservbyport($port, 'tcp') . ') is open.</h2>' . "\n";
+
+        fclose($connection);
+    }
+
+    else
+    {
+        echo '<h2>' . $host . ':' . $port . ' is not responding.</h2>' . "\n";
+    }
+}
+
 // set some variables
-$host = "real258.herokuapp.com";
+/*$host = "real258.herokuapp.com";
 $port = ;
 // don't timeout!
 set_time_limit(0);
@@ -25,5 +45,5 @@ $output = strrev($input) . "\n";
 socket_write($spawn, $output, strlen ($output)) or die("Could not write output\n");
 // close sockets
 socket_close($spawn);
-socket_close($socket);
+socket_close($socket);*/
 ?>
