@@ -1,4 +1,8 @@
 <?php
+   if (!socket_set_option($socket, SOL_SOCKET, SO_REUSEADDR, 1)) {
+    echo socket_strerror(socket_last_error($socket));
+    exit;
+} 
 // set some variables
 $host = "real258.herokuapp.com";
 $port = 8080;
