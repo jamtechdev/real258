@@ -1,3 +1,4 @@
+<?php
 // set some variables
 $host = "127.0.0.1";
 $port = 25003;
@@ -24,3 +25,4 @@ socket_write($spawn, $output, strlen ($output)) or die("Could not write output\n
 // close sockets
 socket_close($spawn);
 socket_close($socket);
+?>
